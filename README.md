@@ -8,10 +8,10 @@ This repository contains the evaluation code and dataset for Assignment 1. Here,
 - System A: Onboarding & Verification
 - System B: Fraud & Trust Monitoring
 
-Each pair folder contains one or two evaluation notebook. All notebooks were run on Google Colab and all of them can be reproduced by running the cells top to bottom.
+Each pair folder contains one or two evaluation notebooks. All notebooks were run on Google Colab and all of them can be reproduced by running the cells top to bottom.
 
 ## How to reproduce
-1. Open the notebook in each folder in your preferrd environment.
+1. Open the notebook in each folder in your preferred environment.
 2. Run all cells in order. 
 3. Required libraries are installed in the provided cells of each notebook.  
 4. Datasets are either included in the folder or can be downloaded automatically. 
@@ -44,6 +44,14 @@ Topic: Deep Variational (VAE/GAN)
 - Both trained only on normal transactions and tested on a held-out mix of normal and fraud transactions.
 - The credit-card fraud dataset is downloaded automatically from a public URL in the first cell (original source: Dal Pozzolo et al., 2015).
 - Outputs: AUC for both models.
+
+### pair4_multimodal
+Topic: Multimodal / LMM
+- Model A: CLIP document-type classifier (openai/clip-vit-base-patch32) via Hugging Face, using zero-shot classification.
+- Model B: CLIP claim-consistency checker, using the same model to compare an image against a claimed label.
+- Test set is 10 images in the data folder: publicly available specimen 
+  document images, my own selfies, and free-stock random images, each with a known ground-truth label.
+- Outputs: Model A classification accuracy, and Model B true-vs-false claim scores.
 
 ## Notes
 - All evaluation code and analysis is my own work.
