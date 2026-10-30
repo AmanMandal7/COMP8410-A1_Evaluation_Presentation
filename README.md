@@ -55,6 +55,14 @@ Topic: Video / Temporal Analysis
 - Each video is reduced to ~12 sampled frames, scored per-frame by both models, then combined into a per-video decision (mean probability + majority vote). Temporal consistency (score variance, frame-to-frame change) is also measured.
 - Outputs: per-video real/fake decision and accuracy for both models, plus temporal consistency stats.
 
+### pair6_gnn_heterophily
+Topic: Graph Neural Networks under Heterophily
+- Model A: Standard GCN (homophily) using PyTorch Geometric's GCNConv.
+- Model B: FAGCN (heterophily) using PyTorch Geometric's FAConv, which learns a signed weight per edge.
+- Dataset is the Wisconsin web-page graph (WebKB), a known heterophilous graph with an edge homophily ratio of 0.196. It downloads automatically via PyTorch Geometric in the notebook.
+- Both models are trained with the same setup (cross-entropy, Adam, 200 epochs) and evaluated across the 10 standard train/test splits, with results averaged.
+- Outputs: accuracy and macro-F1 for both models, plus the graph's edge homophily ratio.
+
 ## Notes
 - All evaluation code and analysis is my own work.
 - Pre-trained models are used via their public libraries.
