@@ -63,7 +63,17 @@ Topic: Graph Neural Networks under Heterophily
 - Both models are trained with the same setup (cross-entropy, Adam, 200 epochs) and evaluated across the 10 standard train/test splits, with results averaged.
 - Outputs: accuracy and macro-F1 for both models, plus the graph's edge homophily ratio.
 
+### pair7_fairness_governance
+Topic: Fairness and Governance
+- Model A: Logistic Regression classifier (scikit-learn).
+- Model B: Random Forest classifier (scikit-learn).
+- Both predict whether a person earns over 50K, trained and tested on the same features, then audited for fairness across the sex groups.
+- Dataset is the Adult Income dataset (~48,800 records). It downloads automatically via fairlearn in the notebook (original source: Becker & Kohavi, 1996).
+- Outputs: accuracy, demographic parity difference, and equalized odds difference for both models, plus accuracy broken down by group.
+
 ## Notes
 - All evaluation code and analysis is my own work.
 - Pre-trained models are used via their public libraries.
-- The small self-made image sets were created by me for testing.
+- The small self-made image and video sets were created by me for testing.
+- Datasets that download automatically (LFW, credit-card fraud, Wisconsin, Adult) are public and fetched at runtime, so no large data files are stored in this repository.
+- No real identity documents or sensitive personal data are included; all face/video test samples are either my own or from public sources.
